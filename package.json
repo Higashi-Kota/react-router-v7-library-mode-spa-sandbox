@@ -1,0 +1,27 @@
+{
+  "name": "react-router-handson",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "scripts": {
+    "install:all": "pnpm install --recursive",
+    "clean": "pnpm -r run clean",
+    "clean:all": "pnpm run clean && rm -rf node_modules */node_modules dist */dist",
+    "format:fix": "biome check . --fix --unsafe",
+    "format:check": "biome check .",
+    "knip": "knip --exclude files",
+    "knip:fix": "knip --exclude files --fix",
+    "update:check": "taze major -r",
+    "update:install": "taze major -r -w --install",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter backend dev",
+    "build:frontend": "pnpm --filter frontend build",
+    "build:backend": "pnpm --filter backend build",
+    "lint": "pnpm format:check && pnpm --filter frontend lint && pnpm --filter backend lint",
+    "typecheck": "pnpm --filter frontend typecheck && pnpm --filter backend typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
+    "knip": "^5.66.0",
+    "taze": "^19.8.0"
+  }
+}

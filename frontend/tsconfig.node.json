@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../shared-config/tsconfig/node.json",
+  "compilerOptions": {},
+  "include": ["vite.config.ts"]
+}

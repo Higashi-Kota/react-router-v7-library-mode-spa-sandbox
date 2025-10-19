@@ -1,0 +1,29 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["backend/src/server.ts", "frontend/src/main.tsx", "taze.config.js"],
+  "project": [
+    "backend/src/**/*.ts",
+    "frontend/src/**/*.ts",
+    "frontend/src/**/*.tsx"
+  ],
+  "ignore": [
+    "**/*.config.js",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.turbo/**",
+    "**/taze.config.js"
+  ],
+  "ignoreDependencies": ["@biomejs/biome", "typescript", "tsx"],
+  "ignoreExportsUsedInFile": true,
+  "workspaces": {
+    "backend": {
+      "ignoreDependencies": ["pino-pretty"]
+    },
+    "shared-config": {
+      "entry": [],
+      "project": [],
+      "ignoreDependencies": ["vite/client"]
+    }
+  },
+  "ignoreWorkspaces": ["@internal/shared-config"]
+}
